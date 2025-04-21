@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eisenhower Matrix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-tasks-alt"></i>
+                <h1>Eisenhower Matrix</h1>
+            </div>
+            <button id="theme-toggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+        </header>
+        
+        <div class="mobile-help">
+            <p><i class="fas fa-info-circle"></i> <strong>Mobile Instructions:</strong> Use the colored buttons on each task to move it to the desired quadrant.</p>
+        </div>
+        
+        <main>
+            <div class="sidebar">
+                <h2><i class="fas fa-plus-circle"></i> Create Task</h2>
+                <div class="task-form">
+                    <input type="text" id="task-title" placeholder="Task Title">
+                    <textarea id="task-description" placeholder="Description"></textarea>
+                    <button id="create-task"><i class="fas fa-plus"></i> Add Task</button>
+                </div>
+                <div class="task-list">
+                    <h3><i class="fas fa-list"></i> Task List</h3>
+                    <p class="hint">Organize your tasks by moving them to the appropriate quadrant</p>
+                    <div id="tasks-container"></div>
+                </div>
+            </div>
+            
+            <div class="matrix-container">
+                <div class="matrix-headers">
+                    <div class="empty-corner"></div>
+                    <div class="matrix-header urgent">
+                        <i class="fas fa-bolt"></i> URGENT
+                    </div>
+                    <div class="matrix-header non-urgent">
+                        <i class="fas fa-hourglass"></i> NOT URGENT
+                    </div>
+                </div>
+                
+                <div class="matrix-rows">
+                    <div class="matrix-row">
+                        <div class="matrix-row-header important">
+                            <i class="fas fa-star"></i> IMPORTANT
+                        </div>
+                        <div class="matrix-quadrant" id="q1" data-quadrant="1">
+                            <h3>Do it right away</h3>
+                            <div class="drop-zone">
+                                <div class="quadrant-tasks"></div>
+                            </div>
+                        </div>
+                        <div class="matrix-quadrant" id="q2" data-quadrant="2">
+                            <h3>Plan to do it later</h3>
+                            <div class="drop-zone">
+                                <div class="quadrant-tasks"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="matrix-row">
+                        <div class="matrix-row-header not-important">
+                            <i class="fas fa-minus-circle"></i> NOT IMPORTANT
+                        </div>
+                        <div class="matrix-quadrant" id="q3" data-quadrant="3">
+                            <h3>Ask someone else</h3>
+                            <div class="drop-zone">
+                                <div class="quadrant-tasks"></div>
+                            </div>
+                        </div>
+                        <div class="matrix-quadrant" id="q4" data-quadrant="4">
+                            <h3>Skip or remove it</h3>
+                            <div class="drop-zone">
+                                <div class="quadrant-tasks"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
